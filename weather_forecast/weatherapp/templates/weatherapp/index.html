@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" />
+    <title>Weather</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="container">
+      <form method="POST">
+          {% csrf_token %}
+          <input type="text" placeholder="Choose a city" name="city"/>
+          <button type='submit'>Search</button>
+      </form>
+      <div class="current-city">
+        {{ city|title }}
+        <div class="current-day">
+          <p>{{ day }}</p>
+        </div>
+      </div>
+      <div class="weather">
+        <div class="left">
+          <div class="icon_large">
+            <img src="http://openweathermap.org/img/w/{{icon}}.png" width="100px" />
+          </div>
+          <div class="current-temp">
+            <h2>{{ temp }}&deg;</h2>
+          </div>
+        </div>
+        <div class="right">
+          <div class="condition">
+            <div class="label">High temp.</div>
+            <div id="high"> {{ temp_max }}&deg; </div>
+          </div>
+          <div class="condition">
+            <div class="label">Pressure</div>
+            <div id="high"> {{ pressure }} hPa</div>
+          </div>
+          <div class="condition">
+            <div class="label">Humidity</div>
+            <div id="current-data"> {{ humidity }}% </div>
+          </div>
+          <div class="condition">
+            <div class="label">Min temp.</div>
+            <div id="current-data"> {{ temp_min }}&deg; </div>
+          </div>
+
+          <div class="condition">
+            <div class="label">Wind</div>
+            <div id="current-data"> {{ wind }} m/s </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  
+    
+</body>
+</html>

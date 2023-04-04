@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap');
+
+body{
+  background-image: radial-gradient(circle at 52% 94%, rgba(169, 169, 169,0.04) 0%, rgba(169, 169, 169,0.04) 50%,rgba(199, 199, 199,0.04) 50%, rgba(199, 199, 199,0.04) 100%),
+  radial-gradient(circle at 96% 98%, rgba(61, 61, 61,0.04) 0%, rgba(61, 61, 61,0.04) 50%,rgba(201, 201, 201,0.04) 50%, rgba(201, 201, 201,0.04) 100%),
+  radial-gradient(circle at 93% 97%, rgba(227, 227, 227,0.04) 0%, rgba(227, 227, 227,0.04) 50%,rgba(145, 145, 145,0.04) 50%, rgba(145, 145, 145,0.04) 100%),
+  radial-gradient(circle at 79% 52%, rgba(245, 245, 245,0.04) 0%, rgba(245, 245, 245,0.04) 50%,rgba(86, 86, 86,0.04) 50%, rgba(86, 86, 86,0.04) 100%),linear-gradient(90deg, rgb(210, 9, 198),rgb(25, 38, 118));
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Roboto Mono', monospace;
+}
+
+form{
+  display:grid;
+  grid-template-columns:72% 25%;
+  grid-gap:3%;
+}
+
+.container{
+  width: 50%;;
+  background-color: #77ACF1;
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  color:#F0EBCC;
+
+}
+
+input, .btn{
+  padding: .5rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid white;
+}
+
+.btn{
+  padding: .5rem 1rem;
+  background-color:#F0EBCC ;
+  color:#04009A ;
+  border:2px solid #04009A ;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  background-color:#04009A ;
+  color:#fff ;
+}
+
+.current-city {
+    font-size: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.current-day {
+    font-size: 1rem;
+}
+
+.weather{
+  margin-top:1rem;
+  display:flex;
+  align-items:center;
+  height:200px;
+}
+
+.left{
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-right: 3px solid #fff;
+}
+
+.icon_large {
+    width: 80px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.current-temp {
+    font-size: 3rem;
+    margin-left: 1rem;
+}
+
+.right{
+ display: grid;
+ width: 60%;
+ justify-content: space-around;
+ gap: 0.5rem;
+ grid-template-columns: repeat(3, auto);
+ grid-template-rows: repeat(2, auto);
+ padding-top: 1rem;
+}
+
+.condition{
+  height:80px;
+  padding: .5rem;
+  color:#F0EBCC;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container{
+   width:80%; 
+  } 
+}
+
+@media only screen and (max-width: 700px) {
+  .weather {
+    flex-direction:column;
+    height:auto;
+  }
+  .container{
+    text-align:center;
+    width:90%;
+    height:90%;
+  }
+  .right{
+    margin-top:.5rem;
+    margin-left:0;
+  }
+  form{
+    grid-template-columns:100%;
+
+  }
+}
